@@ -1,27 +1,24 @@
-# TekmanRpo
+## Prueba final Tekman (Front)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+Para el desarrollo de la parte front de la prueba, he utilitzado el framework Angular 5.
+En esta parte, a nivel de arquitectura no se ha profundizado más allá del uso del propio framework.
 
-## Development server
+### Componentes
+Se han desarrollado cuatro componentes, para la solicitud de datos al usuario y para mostrar la lista de tweets. Los componentes son:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- `HeaderComponent`
+- `ItemComponent`
+- `ListComponent`
+- `SearchComponent`
 
-## Code scaffolding
+No se ha utilizado ningún tipo de routing para la solución final.
+Para el render de los componentes se ha usado `Bootstrap`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Servicios
+Se ha desarrollado un único servicio para consultar a la parte backend. El servicio TwitterService dispone de un único método,
+para la recuperación de los 10 últimos tweets.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Deuda técnica
+Habitualmente, para mejorar la mantenibilidad del desarrollo se crea un Servicio genérico de datos, para acceder a los distintos recursos expuestos
+por una API REST. De este modo, sólo es necesario definir las URIs para cada recurso y método, y reutilizar la lógica del servicio para todos ellos, 
+evitando el DRY.  

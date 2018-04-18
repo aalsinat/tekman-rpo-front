@@ -1,0 +1,8 @@
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
+  <div class="form-group">
+    <label for="screenName">Screen name</label>
+    <input type="text" id="screenName" name="screenName" class="form-control" ngModel required #screenNameCtrl="ngModel">
+    <span class="help-block" *ngIf="screenNameCtrl.invalid && screenNameCtrl.touched">Please enter a screen name</span>
+  </div>
+  <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Search for tweets</button>
+</form>
